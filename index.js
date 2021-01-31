@@ -11,16 +11,6 @@ client.emotes = client.config.emojis;
 client.filters = client.config.filters;
 client.commands = new discord.Collection();
 
-let cnt = message.content
-    if (cnt !== " ") {
-        const cn = message.channel
-        message.delete(500) // ?
-        let channel = message.channel.name
-        let guild = message.guild.name
-        console.log(`${s(guild + ', ' + channel)} | ${w(cnt)}`)
-        cn.send(cnt);
-      }
-
 fs.readdirSync('./commands').forEach(dirs => {
     const commands = fs.readdirSync(`./commands/${dirs}`).filter(files => files.endsWith('.js'));
 
