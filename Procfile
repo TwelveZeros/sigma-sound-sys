@@ -1,0 +1,1 @@
+worker: npm start #Indicated in package.json
