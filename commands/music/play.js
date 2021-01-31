@@ -12,6 +12,6 @@ module.exports = {
         if (!args[0]) return message.channel.send(`${client.emotes.error} - Please indicate the title of a song !`);
         
         client.player.play(message, args.join(" "), { firstResult: true });
-        await message.delete()
+        const newLocal = await message.delete();
     },
 };
