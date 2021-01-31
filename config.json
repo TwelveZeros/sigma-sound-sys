@@ -1,9 +1,0 @@
-{
-    "prefix": "/",
-    "token": "ODA1Mzg4NDEwMTU5MTA0MDAw.YBaKaA.j0UR9upxm2OOt0Z7JcMTujd8-vU",
-    "tenorAPI": "Tenor-Token-Here",
-    "newsAPI": "NewsAPI-Token-Here",
-    "youtubeAPI": "Youtube-Token-Here",
-    "yandexAPI": "YandexTranslate-Token-Here",
-    "geniusLyricsAPI": "Genius-Token-Here"
-  }
