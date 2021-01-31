@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  },
+  "name": "sigma-sound-sys",
+  "version": "1.0.0",
+  "description": "@SigmaOS 2020",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SigmaOS (twelve.md)",
+  "license": "ISC"
+}
