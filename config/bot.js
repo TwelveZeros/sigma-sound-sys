@@ -10,7 +10,7 @@ module.exports = {
     discord: {
         token: 'ODA1Mzg4NDEwMTU5MTA0MDAw.YBaKaA.fuaVxKmw0C0ZZI0H1pAz3sDCVWk',
         prefix: '/',
-        activity: 'ACTIVITY',
+        activity: 'Sigma OS',
     },
 
     filters: ['8D', 'gate', 'haas', 'phaser', 'treble', 'tremolo', 'vibrato', 'reverse', 'karaoke', 'flanger', 'mcompand', 'pulsator', 'subboost', 'bassboost', 'vaporwave', 'nightcore', 'normalizer', 'surrounding'],
