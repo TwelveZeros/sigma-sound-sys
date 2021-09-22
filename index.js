@@ -19,6 +19,7 @@ fs.readdirSync('./commands').forEach(dirs => {
         console.log(`Loading command ${file}`);
         client.commands.set(command.name.toLowerCase(), command);
     };
+    
 });
 
 const events = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
@@ -36,4 +37,4 @@ for (const file of player) {
     client.player.on(file.split(".")[0], event.bind(null, client));
 };
 
-client.login(client.config.discord.token);
+client.login(process.env.BOT_TOKEN);
