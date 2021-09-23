@@ -8,7 +8,7 @@ module.exports = {
         if (!message.member.voice.channel) return message.channel.send({
             embed: {
                 color: 'e91e63',
-                author: { name: `Queue clear: ${client.emotes.error}`},
+                author: { name: `Play: ⚠️`},
                 footer: { text: `You're not in a voice channel !` },
             }
         });
@@ -16,7 +16,7 @@ module.exports = {
         if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send({
             embed: {
                 color: 'e91e63',
-                author: { name: `Queue clear: ${client.emotes.error}`},
+                author: { name: `Play: ⚠️`},
                 footer: { text: `You're not in the same voice channel !` },
             }
         });
@@ -24,7 +24,7 @@ module.exports = {
         if (!args[0]) return message.channel.send({
             embed: {
                 color: 'e91e63',
-                author: { name: `Queue clear: ${client.emotes.error}`},
+                author: { name: `Play: ⚠️`},
                 footer: { text: `Please indicate the title of a song !` },
             }
         });
