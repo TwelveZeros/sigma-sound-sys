@@ -5,15 +5,39 @@ module.exports = {
     utilisation: '{prefix}stop',
 
     execute(client, message) {
-        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - You're not in a voice channel !`);
+        if (!message.member.voice.channel) return message.channel.send(message.channel.send({
+            embed: {
+                color: 'e91e63',
+                author: { name: `Stop: ⚠️`},
+                footer: { text: `You're not in a voice channel !` },
+            }
+        }));
 
-        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} - You are not in the same voice channel !`);
+        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send({
+            embed: {
+                color: 'e91e63',
+                author: { name: `Stop: ⚠️`},
+                footer: { text: `You're not in the same voice channel !` },
+            }
+        });
 
-        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - No music currently playing !`);
+        if (!client.player.getQueue(message)) return message.channel.send({
+            embed: {
+                color: 'e91e63',
+                author: { name: `Play: ⚠️`},
+                footer: { text: `No music currently playing !` },
+            }
+        });
 
         client.player.setRepeatMode(message, false);
         client.player.stop(message);
 
-        message.channel.send(`${client.emotes.success} - Music **stopped** into this server !`);
+        message.channel.send(message.channel.send({
+            embed: {
+                color: 'e91e63',
+                author: { name: `Music stopped: ⏹️`},
+                footer: { text: `Time for silence` },
+            }
+        }));
     },
 };
