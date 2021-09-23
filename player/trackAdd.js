@@ -3,7 +3,7 @@ module.exports = (client, message, queue, track) => {
         embed: {
             color: 'e91e63',
             author: { name: `Added to the queue: ☑️`},
-            text: { text: `Track: ${track.title}`},
+            footer: { text: `Track: ${track.title}`},
         }
     });
 };

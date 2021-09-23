@@ -33,7 +33,7 @@ module.exports = (client, error, message) => {
                 embed: {
                     color: 'e91e63',
                     author: { name: `Error: ⚠️`},
-                    text: { text: `Something went wrong ...`},
+                    footer: { text: `Something went wrong ...`},
                     footer: { text: `||Code: ${error}||`},
                 }
             });

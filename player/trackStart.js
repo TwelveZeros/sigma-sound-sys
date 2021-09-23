@@ -3,7 +3,7 @@ module.exports = (client, message, track) => {
         embed: {
             color: 'e91e63',
             author: { name: `Now playing: ▶️`},
-            text: { text: `Track: ${track.title}`},
+            footer: { text: `Track: ${track.title}`},
             footer: { text: `Channel: ${message.member.voice.channel.name}` },
         }
     });

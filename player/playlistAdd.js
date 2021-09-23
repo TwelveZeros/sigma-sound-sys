@@ -3,8 +3,8 @@ module.exports = (client, message, queue, playlist) => {
         embed: {
             color: 'e91e63',
             author: { name: `Playlist added: ✔️`},
-            text: { text: `${playlist.title}`},
-            text: { text: `Added: ${playlist.tracks.length} songs`},
+            footer: { text: `${playlist.title}`},
+            footer: { text: `Added: ${playlist.tracks.length} songs`},
         }
     });
 };
