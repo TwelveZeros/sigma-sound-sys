@@ -26,7 +26,13 @@ module.exports = {
         } else {
             const command = message.client.commands.get(args.join(" ").toLowerCase()) || message.client.commands.find(x => x.aliases && x.aliases.includes(args.join(" ").toLowerCase()));
 
-            if (!command) return message.channel.send(`${client.emotes.error} - I did not find this command !`);
+            if (!command) return message.channel.send({
+                embed: {
+                    color: 'e91e63',
+                    author: { name: `Help: ⚠️`},
+                    footer: { text: `I did not find this command !` },
+                }
+            });
 
             message.channel.send({
                 embed: {
