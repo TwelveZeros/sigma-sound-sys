@@ -28,12 +28,11 @@ module.exports = (client, error, message) => {
             });
             break;
         default:
-            message.channel.send(`${client.emotes.error} - Something went wrong ... Error : ${error}`);
             message.channel.send({
                 embed: {
                     color: 'e91e63',
                     author: { name: `Error: ⚠️`},
-                    footer: { text: `Something went wrong ...`},
+                    description: `Something went wrong ...`,
                     footer: { text: `||Code: ${error}||`},
                 }
             });
