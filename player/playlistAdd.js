@@ -1,3 +1,10 @@
 module.exports = (client, message, queue, playlist) => {
-    message.channel.send(`${client.emotes.music} - ${playlist.title} has been added to the queue (**${playlist.tracks.length}** songs) !`);
+    message.channel.send({
+        embed: {
+            color: 'e91e63',
+            author: { name: `Playlist added: ✔️`},
+            text: { text: `${playlist.title}`},
+            text: { text: `Added: ${playlist.tracks.length} songs`},
+        }
+    });
 };

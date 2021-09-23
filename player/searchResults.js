@@ -1,10 +1,8 @@
 module.exports = (client, message, query, tracks) => {
     message.channel.send({
         embed: {
-            color: 'BLUE',
-            author: { name: `Here are your search results for ${query}` },
-            footer: { text: 'This bot uses a Github project made by Zerio (ZerioDev/Music-bot)' },
-            timestamp: new Date(),
+            color: 'e91e63',
+            author: { name: `Search results for ${query}: ` },
             description: `${tracks.map((t, i) => `**${i + 1}** - ${t.title}`).join('\n')}`,
         },
     });
