@@ -5,11 +5,29 @@ module.exports = {
     utilisation: '{prefix}nowplaying',
 
     execute(client, message) {
-        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - You're not in a voice channel !`);
+        if (!message.member.voice.channel) return message.channel.send({
+            embed: {
+                color: 'e91e63',
+                author: { name: `Repeat mode: ⚠️`},
+                footer: { text: `You're not in a voice channel !` },
+            }
+        });
 
-        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} - You are not in the same voice channel !`);
+        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send({
+            embed: {
+                color: 'e91e63',
+                author: { name: `Error: ⚠️`},
+                footer: { text: `You're not in the same voice channel !` },
+            }
+        });
 
-        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - No music currently playing !`);
+        if (!client.player.getQueue(message)) return message.channel.send({
+            embed: {
+                color: 'e91e63',
+                author: { name: `Error: ⚠️`},
+                footer: { text: `No music currently playing !` },
+            }
+        });
 
         const track = client.player.nowPlaying(message);
         const filters = [];
@@ -18,9 +36,8 @@ module.exports = {
 
         message.channel.send({
             embed: {
-                color: 'RED',
+                color: 'e91e63',
                 author: { name: track.title },
-                footer: { text: 'This bot uses a Github project made by Zerio (ZerioDev/Music-bot)' },
                 fields: [
                     { name: 'Channel', value: track.author, inline: true },
                     { name: 'Requested by', value: track.requestedBy.username, inline: true },
@@ -37,7 +54,6 @@ module.exports = {
                     { name: 'Progress bar', value: client.player.createProgressBar(message, { timecodes: true }), inline: true }
                 ],
                 thumbnail: { url: track.thumbnail },
-                timestamp: new Date(),
             },
         });
     },
