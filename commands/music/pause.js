@@ -44,7 +44,7 @@ module.exports = {
                 color: 'e91e63',
                 author: { name: `Pause: ⏸️`},
                 description: `Track: ${client.player.getQueue(message).playing.title}`,
-                description: `The music is paused`,
+                footer: { text: `The music is paused`},
             }
         });
     },
