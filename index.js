@@ -5,6 +5,13 @@ const client = new discord.Client({ disableMentions: 'everyone' });
 
 const { Player } = require('discord-player');
 
+
+client.on("voiceStateUpdate", (oldVoiceState, newVoiceState) => {
+    if (newVoiceState.id == client.user.id) {
+       newVoiceState.setSelfDeaf(true);
+    };
+});
+
 client.player = new Player(client);
 client.config = require('./config/bot');
 client.emotes = client.config.emojis;
