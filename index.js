@@ -8,7 +8,7 @@ const { Player } = require('discord-player');
 
 client.on("voiceStateUpdate", (oldVoiceState, newVoiceState) => {
     if (newVoiceState.id == client.user.id) {
-       newVoiceState.setSelfDeaf(true);
+        connection.voice.setSelfDeaf(true);
     };
 });
 
